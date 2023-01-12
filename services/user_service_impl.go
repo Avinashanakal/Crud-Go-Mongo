@@ -38,7 +38,7 @@ func (u *UserServiceImpl) GetUser(name *string) (*models.User, error) {
 	if err := u.UserCollection.FindOne(u.Ctx, query).Decode(&user); err != nil {
 		return user, err
 	}
-	return nil, nil
+	return user, nil
 }
 
 func (u *UserServiceImpl) GetAll() ([]*models.User, error) {
